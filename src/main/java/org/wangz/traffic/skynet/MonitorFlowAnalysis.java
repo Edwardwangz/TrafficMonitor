@@ -2,8 +2,9 @@ package org.wangz.traffic.skynet;
 
 
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.sql.RowFactory;
 import org.apache.spark.sql.SparkSession;
-import org.wangz.constant.Constant;
+import org.wangz.traffic.constant.Constant;
 
 public class MonitorFlowAnalysis {
 
@@ -15,6 +16,9 @@ public class MonitorFlowAnalysis {
                 .enableHiveSupport()
                 .getOrCreate();
         JavaSparkContext sc = new JavaSparkContext(spark.sparkContext());
+        spark.sql("use traffic");
+
+
 
     }
 }
