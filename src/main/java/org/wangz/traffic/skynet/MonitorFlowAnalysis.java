@@ -1,10 +1,14 @@
 package org.wangz.traffic.skynet;
 
 
+import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.RowFactory;
 import org.apache.spark.sql.SparkSession;
 import org.wangz.traffic.constant.Constant;
+import scala.collection.immutable.List;
+
+import java.util.ArrayList;
 
 public class MonitorFlowAnalysis {
     /**
@@ -21,10 +25,8 @@ public class MonitorFlowAnalysis {
                 .master(Constant.SPARK_RUN_MODE)
                 .getOrCreate();
         JavaSparkContext sc = new JavaSparkContext(spark.sparkContext());
-
-
-
-
+        ArrayList list = new ArrayList();
+        JavaRDD rdd = sc.parallelize(list);
 
 
     }
